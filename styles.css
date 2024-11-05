@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+/* MELS WEBPAGE STYLE. Everything with .MTC in front of it only modifies the "meet the characters" page. */
+
+  .MTC-header {
+    background-color: #4a90e2; /* Header background color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .MTC-main {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 40px;
+    padding: 20px;
+  }
+  
+  .MTC-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Left column for text, right column for thumbnails */
+    grid-gap: 40px;
+    margin-bottom: 40px; /* Space between sections */
+  }
+  
+  .MTC-section__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .MTC-section__description {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .MTC-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two columns for the mom and dad */
+    gap: 20px; /* Space between grid items */
+    justify-items: center; 
+  }
+  
+  .MTC-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+  }
+
+  .MTC-grid-item--riley {
+    grid-column: 1 / span 2;
+  }
+  
+  .MTC-thumbnail {
+    width: 200px; /* Thumbnail width */
+    height: 200px; /* Thumbnail height */
+    border-radius: 50%; /* Circular thumbnails */
+    overflow: hidden; /* Hide overflow for circular effect */
+    background-color: #f0f0f0; /* Thumbnail background color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+  }
+  
+  .MTC-thumbnail__img {
+    width: 100%; /* Image fills the container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .MTC-thumbnail__name {
+    margin-top: 10px; /* Space between image and text */
+    text-align: center; /* Center the text */
+  }
+
+  .MTC-thumbnail__text {
+    text-align: center;
+  }
+
+  .MTC-section--family {
+    margin-bottom: 40px; /* Ensure there's space below the Family section */
+}
+
+.MTC-section--emotions {
+    margin-top: 40px; /* Add some space above the Emotions section */
+}
