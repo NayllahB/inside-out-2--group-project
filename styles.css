@@ -1,9 +1,56 @@
+:root { /* These are the colors provided from the style guide, please use these while building your webpage*/
+  --primary-white:#ffffff;
+  --primary-grey:#d9d9d9;
+  --primary-black:#000000;
+  --primary-mdn-blue:#201d80;
+  --primary-thistle:#c9c5ea;
+  --joy:#fedf68;
+  --anxiety:#e4773a;
+  --sadness:#4cbeff;
+  --disgust:#badb70;
+  --anger:#ec252c;
+  --fear:#ab95c6;
+  --envy:#22b5c2;
+  --embarassment:#e773ac;
+  --ennui:#7079b8;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
   }
   
+  .allheader { /*styling for header*/
+    background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7, #85389f);
+    padding: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .allnav_link { /*styling for links in header*/
+    color: var(--primary-white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    
+  }
+  .movie_name { /*styling for movie name*/
+    color:var(--primary-thistle);
+    margin: 0 auto 0 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
+  .allfooter { /*styling for footer*/
+    background-color: var(--primary-grey);
+    text-align: center;
+    padding: 5px;
+  }
 
 /* MELS WEBPAGE STYLE. Everything with .MTC in front of it only modifies the "meet the characters" page. */
 
