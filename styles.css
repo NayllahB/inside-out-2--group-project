@@ -1,6 +1,6 @@
 :root { /* These are the colors provided from the style guide, please use these while building your webpage*/
   --primary-white:#ffffff;
-  --primary-grey:#d9d9d9;
+  --primary-grey:#f6f6f4;
   --primary-black:#000000;
   --primary-mdn-blue:#201d80;
   --primary-thistle:#c9c5ea;
@@ -14,12 +14,100 @@
   --embarassment:#e773ac;
   --ennui:#7079b8;
 }
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+@font-face {
+  font-family: 'InsideOutCustomFont';
+  src: url('fonts/InsideOut-DAp0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.movie_name {
+    font-family: 'InsideOutCustomFont', sans-serif;
+    font-size: 40px; /* Adjust size as needed */
+    color: var(--primary-white); /* Set color to white */
+    letter-spacing: 2px; /* Adjust letter spacing */
+    text-decoration: none; /* Remove underline from link */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for growth and shadow */
+}
+
+.movie_name:hover {
+    transform: scale(1.1); /* Grow effect on hover */
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3)); /* Shadow effect */
+}
+
+/* Set the main font and background color */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+/* Set Poppins as the primary font for the entire website */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Apply Lora as the secondary font for quotes and special text */
+.quote, .secondary-text {
+  font-family: 'Lora', serif;
+}
+
+/* Heading level styles with Poppins font weights and sizes */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 700; /* Bold */
+  margin: 0; /* Optional: Reset margin if needed */
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 600; /* Semi-Bold */
+  margin: 0;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 500; /* Medium */
+  margin: 0;
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 400; /* Regular */
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 300; /* Light */
+  margin: 0;
+}
+
+h6 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 300; /* Light */
+  margin: 0;
+}
+
+/* Example for applying Lora font to quotes */
+.quote {
+  font-family: 'Lora', serif;
+  font-style: italic; /* Optional: adds italics for a quote look */
+  font-size: 18px; /* Adjust as needed */
+  color: #333; /* Adjust color if necessary */
+}
   
   .allheader { /*styling for header*/
     background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7, #85389f);
@@ -29,17 +117,39 @@ body {
     align-items: center;
   }
 
-  .allnav_link { /*styling for links in header*/
+  .allnav_link {
     color: var(--primary-white);
     text-decoration: none;
     font-weight: bold;
     padding: 5px;
     margin: 0 5px;
     text-transform: uppercase;
-    
+    position: relative;
   }
+  
+  .allnav_link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Position underline slightly below the text */
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-white);
+    transition: width 0.3s ease;
+  }
+  
+  /* Hover effect to animate underline */
+  .allnav_link:hover::after {
+    width: 100%;
+  }
+  
+  /* Keep underline on the active page */
+  .allnav_link.active::after {
+    width: 100%;
+  }
+  
   .movie_name { /*styling for movie name*/
-    color:var(--primary-thistle);
+    color:var(--primary-white);
     margin: 0 auto 0 0;
     text-transform: uppercase;
     font-weight: bold;
@@ -134,4 +244,335 @@ body {
 
 .MTC-section--emotions {
     margin-top: 40px; /* Add some space above the Emotions section */
+}
+/* SIERRA - HOMEPAGE-SPECIFIC STYLES */
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url('Background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bokeh-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Styling individual bokeh circles for a soft overlay effect */
+.bokeh-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2; /* Transparent to create a blended effect */
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+}
+
+/* Define color variations to mimic the reference bokeh */
+.bokeh-circle.blue {
+  background: rgba(102, 153, 255, 0.3); /* Soft blue */
+}
+
+.bokeh-circle.purple {
+  background: rgba(170, 102, 204, 0.3); /* Soft purple */
+}
+
+.bokeh-circle.pink {
+  background: rgba(255, 102, 204, 0.3); /* Soft pink */
+}
+
+.hero__logo-container {
+  position: relative;
+  margin-bottom: 20px; /* Space between logo and buttons */
+  z-index: 1; /* Bring logo above background */
+}
+
+.hero__logo {
+  width: 400px; /* Adjust as needed */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for growth and shadow */
+}
+
+.hero__logo:hover {
+  transform: scale(1.1); /* Increase size on hover */
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3)); /* Drop shadow that follows the SVG shape */
+}
+
+/* Button Styles */
+.hero__buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  z-index: 1; /* Ensure buttons appear above background */
+  position: relative;
+}
+
+.hero__button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 30px;
+  border: 2px solid #ffffff; /* White outline */
+  background: transparent; /* Transparent background */
+  color: #ffffff; /* White text */
+  border-radius: 50px; /* Pill shape */
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, transform 0.4s ease; /* Smooth transition for color and grow effect */
+}
+
+.hero__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7);
+  z-index: -1; /* Keeps gradient behind the text */
+  transform: scaleX(0); /* Start with no fill */
+  transform-origin: left;
+  transition: transform 0.4s ease; /* Smooth fill animation */
+}
+
+.hero__button:hover::before {
+  transform: scaleX(1); /* Fills the button on hover */
+}
+
+.hero__button:hover {
+  color: #ffffff; /* Keep text white on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+  transform: scale(1.05); /* Grows the button slightly on hover */
+}
+
+/* Synopsis Section Styling */
+.synopsis-section {
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  color: var(--primary-black);
+}
+
+.synopsis-section h2 {
+  font-size: 32px;
+  color: var(--primary-mdn-blue);
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.synopsis-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Lora', serif;
+  color: var(--primary-black);
+}
+
+/* CTA Sections */
+.cta-section {
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 15px;
+  background-color: var(--primary-grey);
+}
+
+.cta-section h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-mdn-blue);
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.cta-section p {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: var(--primary-black);
+  margin-bottom: 20px;
+}
+
+.cta-section button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  background: var(--primary-thistle);
+  color: var(--primary-white);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-section button:hover {
+  background: var(--primary-mdn-blue);
+}
+
+/* Meet the Characters Section */
+.meet-characters-section {
+  background-color: var(--primary-grey); /* Grey background */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.meet-characters-section h2 {
+  font-size: 32px;
+  color: var(--primary-mdn-blue);
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Character Grid Layout */
+.character-grid {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px; /* Adjust gap between images */
+  margin-bottom: 30px;
+  max-width: 800px; /* Limit the width of the grid on large screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.character {
+  position: relative;
+  width: 200px; /* Adjust size as needed */
+  height: auto; /* Allow height to adjust based on image */
+  overflow: visible; /* Let image exceed the container if needed */
+  transition: transform 0.3s ease;
+}
+
+/* Character Image */
+.character-image {
+  width: 100%; /* Adjust size as needed */
+  height: auto;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover Effect for the Character Image */
+.character:hover .character-image {
+  transform: scale(1.1); /* Slightly increase image size on hover */
+  filter: 
+    drop-shadow(0px 0px 20px var(--glow-color)); /* Glow for emphasis */
+}
+
+/* Meet Button Styling */
+.meet-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 30px;
+  color: prim; /* White text */
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 2px solid var(--primary-mdn-blue); /* Primary blue color for the border */
+  border-radius: 50px; /* Pill shape */
+  transition: color 0.4s ease, transform 0.4s ease;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0px 0px 0px 2px #fff inset; /* Creates a white gap between gradient and text */
+}
+
+.meet-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7);
+  z-index: -1; /* Keeps gradient behind the text */
+  border-radius: 50px;
+  transition: transform 0.4s ease; /* Smooth fill animation */
+  transform: scaleX(0); /* Start with no fill */
+  transform-origin: left;
+}
+
+.meet-button:hover::before {
+  transform: scaleX(1); /* Expands to fill the button on hover */
+}
+
+.meet-button:hover {
+  color: #ffffff; /* Keep text white on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+  transform: scale(1.05); /* Grows the button slightly on hover */
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .character-grid {
+    gap: 2px; /* Reduced gap to bring images closer */
+    justify-content: center; /* Center the grid */
+  }
+
+  .character {
+    width: 200px; /* Increased size for larger images */
+    height: 200px;
+  }
+}
+
+/* Display characters in two columns on smaller screens */
+@media (max-width: 600px) {
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two characters per row */
+    display: grid; /* Use grid layout for easier control */
+    justify-items: center; /* Center each item in its grid cell */
+    gap: 10px; /* Adjust as needed for spacing */
+  }
+
+  .character {
+    width: 140px; /* Further increased size for larger images on small screens */
+    height: 140px;
+  }
+}
+
+/* Responsive Header Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .allheader {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally within the header */
+    justify-content: center; /* Center items vertically within the header */
+    padding: 20px 0; /* Add padding for a normal-sized header */
+    text-align: center; /* Center-aligns text content */
+  }
+
+  .movie_name {
+    font-size: 36px; /* Adjust size for smaller screens */
+    margin-bottom: 10px; /* Add space below the logo */
+    text-align: center;
+    order: -1; /* Ensures the logo is above the nav links */
+    width: 100%; /* Make it take full width for centering */
+    display: flex;
+    justify-content: center; /* Center the logo text horizontally */
+  }
+
+  .allheader__nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows links to wrap to a new line if needed */
+    justify-content: center; /* Center-align nav links */
+    gap: 10px; /* Space between nav links */
+    max-width: 100%; /* Keep nav links within screen width */
+    padding: 0;
+  }
+
+  .allnav_link {
+    font-size: 16px; /* Adjust size to prevent overcrowding */
+    padding: 5px 10px; /* Adjust padding as needed */
+  }
 }
