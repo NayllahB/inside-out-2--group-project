@@ -3,10 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Inside Out 2 - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
+    <header class="allheader">
+    <a href="index.html" class="movie_name">Inside Out 2</a>
+    <nav class="allheader__nav">
+        <a class="allnav_link active" href="index.html">Home</a>
+        <a class="allnav_link" href="MTC.html">Meet the Characters</a>
+        <a class="allnav_link" href="overview.html">Overview</a>
+        <a class="allnav_link" href="achievements.html">Achievements</a>
+    </nav>
+    </header>
+
+    <!-- Hero Section with Movie Poster -->
+    <section class="hero">
+        <div class="bokeh-layer"></div>
+        <div class="hero__logo-container">
+            <img src="Logo.svg" alt="Inside Out 2 Logo" class="hero__logo">
+        </div>
+        <div class="hero__buttons">
+            <button onclick="location.href='overview.html'" class="hero__button">Overview</button>
+            <button onclick="location.href='MTC.html'" class="hero__button">Meet the Characters</button>
+        </div>
+    </section>
+<!-- Synopsis Section -->
+<section class="synopsis-section">
+    <h2>Welcome to the Mind of a Teenager</h2>
+    <p>In "Inside Out 2," we revisit Riley as she navigates the rollercoaster of her teenage years. The familiar crew at Headquarters—Joy, Sadness, Anger, Fear, and Disgust—find themselves in for a surprise as new emotions make their way into Riley's life. When Anxiety arrives, it stirs up the dynamics and challenges the team's understanding of their roles. But she might just be the first of several unexpected visitors...</p>
+</section>
+
+<!-- Meet the Characters Section -->
+<section class="meet-characters-section">
+    <h2>Meet the Characters</h2>
+    <div class="character-grid">
+        <div class="character" style="--glow-color: #fedf68;">
+            <img src="joy.png" alt="Joy" class="character-image">
+        </div>
+        <div class="character" style="--glow-color: #e4773a;">
+            <img src="anxiety.png" alt="Anxiety" class="character-image">
+        </div>
+        <div class="character" style="--glow-color: #4cbeff;">
+            <img src="sadness.png" alt="Sadness" class="character-image">
+        </div>
+        <div class="character" style="--glow-color: #badb70;">
+            <img src="disgust.png" alt="Disgust" class="character-image">
+        </div>
+    </div>
+    <button class="meet-button" onclick="location.href='MTC.html'">Meet them all!</button>
+</section>
+        <!-- Overview Section -->
+        <section class="cta-section">
+            <h2>Inside Out Overview</h2>
+            <p>Read about the plot and key themes of the first Inside Out movie. Understand the journey that led Riley and her emotions to where they are now.</p>
+            <button onclick="location.href='overview.html'">View the Overview</button>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="cta-section">
+            <h2>Achievements and Reviews</h2>
+            <p>See the awards and critical acclaim Inside Out has received. Discover why this franchise is beloved by fans and critics alike.</p>
+            <button onclick="location.href='achievements.html'">View Achievements</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="allfooter">
+        <p>Created By:<br>Sierra Bispo<br>Melanie Halem<br>Nayllah Buteau<br>Joseph Carter</p>
+    </footer>
+    <script>
+        const bokehLayer = document.querySelector('.bokeh-layer');
     
+        // Preset positions, sizes, and colors for each bokeh circle, with additional circles on the edges
+        const bokehSettings = [
+            // Left-side circles (lighter colors for visibility)
+            { size: 120, top: 10, left: 5, color: 'blue' },
+            { size: 200, top: 15, left: 10, color: 'purple' },
+            { size: 150, top: 25, left: 3, color: 'pink' },
+            { size: 100, top: 35, left: 8, color: 'purple' },
+            { size: 180, top: 45, left: 12, color: 'blue' },
+            { size: 130, top: 55, left: 6, color: 'pink' },
+            { size: 90, top: 65, left: 7, color: 'purple' },
+            { size: 170, top: 75, left: 4, color: 'blue' },
+            { size: 80, top: 80, left: 2, color: 'lightblue' },
+    
+            // Right-side circles
+            { size: 140, top: 20, left: 90, color: 'pink' },
+            { size: 160, top: 30, left: 92, color: 'blue' },
+            { size: 150, top: 50, left: 93, color: 'purple' },
+            { size: 110, top: 70, left: 95, color: 'pink' },
+            { size: 180, top: 40, left: 97, color: 'blue' },
+            { size: 90, top: 85, left: 96, color: 'purple' },
+            { size: 120, top: 60, left: 94, color: 'lightblue' },
+    
+            // Center and additional random positions for variety
+            { size: 150, top: 20, left: 50, color: 'purple' },
+            { size: 170, top: 40, left: 60, color: 'blue' },
+            { size: 130, top: 50, left: 70, color: 'pink' },
+            { size: 110, top: 60, left: 55, color: 'purple' },
+            { size: 100, top: 70, left: 65, color: 'blue' },
+            { size: 200, top: 10, left: 30, color: 'pink' },
+            { size: 140, top: 15, left: 85, color: 'blue' },
+        ];
+    
+        // Create each bokeh circle with preset size, position, and color
+        bokehSettings.forEach((setting, index) => {
+            const bokehCircle = document.createElement('div');
+            bokehCircle.classList.add('bokeh-circle', setting.color);
+    
+            // Set size, top, and left based on preset values
+            bokehCircle.style.width = `${setting.size}px`;
+            bokehCircle.style.height = `${setting.size}px`;
+            bokehCircle.style.top = `${setting.top}vh`;
+            bokehCircle.style.left = `${setting.left}vw`;
+    
+            // Assign each circle a unique movement multiplier for independent movement
+            bokehCircle.dataset.moveMultiplier = (index % 10 + 1) / 50; // Different movement range for each circle
+    
+            bokehLayer.appendChild(bokehCircle);
+        });
+    
+        // Mouse movement effect with independent parallax for each circle
+        document.addEventListener('mousemove', (e) => {
+            const circles = document.querySelectorAll('.bokeh-circle');
+            circles.forEach(circle => {
+                const multiplier = parseFloat(circle.dataset.moveMultiplier);
+                const moveX = (e.pageX - window.innerWidth / 2) * multiplier;
+                const moveY = (e.pageY - window.innerHeight / 2) * multiplier;
+                circle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
