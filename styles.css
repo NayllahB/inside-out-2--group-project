@@ -178,13 +178,17 @@ h6 {
     padding: 20px;
   }
   
-  .MTC-section {
+  .family-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Left column for text, right column for thumbnails */
     grid-gap: 40px;
     margin-bottom: 40px; /* Space between sections */
   }
-  
+
+  .character__riley {
+    grid-column: 1 / span 2;
+  }
+
   .MTC-section__title {
     font-size: 24px;
     margin-bottom: 10px;
@@ -195,22 +199,23 @@ h6 {
     font-size: 16px;
   }
   
-  .MTC-grid-container {
+  .MTC-emotions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Two columns for the mom and dad */
     gap: 20px; /* Space between grid items */
     justify-items: center; 
   }
   
+  .MTC-family_img {
+    width: 100px;
+    height: auto;
+  }
   .MTC-grid-item {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
   }
 
-  .MTC-grid-item--riley {
-    grid-column: 1 / span 2;
-  }
   
   .MTC-thumbnail {
     width: 200px; /* Thumbnail width */
@@ -224,8 +229,8 @@ h6 {
     justify-content: center; /* Center content vertically */
   }
   
-  .MTC-thumbnail__img {
-    width: 100%; /* Image fills the container */
+  .MTC-emotion__img {
+    width: 200px; /* Image fills the container */
     height: auto; /* Maintain aspect ratio */
   }
   
