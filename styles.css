@@ -162,94 +162,333 @@ h6 {
     padding: 5px;
   }
 
-/* MELS WEBPAGE STYLE. Everything with .MTC in front of it only modifies the "meet the characters" page. */
+/* MELS WEBPAGE STYLE. */
 
-  .MTC-header {
-    background-color: #4a90e2; /* Header background color */
-    color: white;
-    padding: 20px;
-    text-align: center;
+.MTC-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 500px; 
+  overflow: hidden;
+}
+
+.MTC-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
+}
+
+.MTC-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.MTC-hero h1 {
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 2; 
+}
+
+/* Family Section */
+.family-section {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  grid-template-areas: 
+    "family-info family-thumbnails";
+}
+
+.family-info {
+  grid-area: family-info;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3em;
+  background-color: #c9c5ea;
+  padding-top: 300px;
+}
+
+.family-info h2 {
+  font-size: 2em;
+  color: #201d80;
+}
+
+.family-grid {
+  grid-area: family-thumbnails;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+}
+
+.character {
+  position: relative;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.character .name {
+  position: center;
+  bottom: 20px;
+  font-size: 3em;
+  color: #201d80;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+
+}
+
+.character .description {
+  display: none;
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  right: 0;
+  background-color: rgba(201, 197, 234, 0.8);
+  color: black;
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.character:hover .description {
+  display: block;
+}
+
+.character:hover img {
+  transform: scale(1.1); 
+}
+
+/* Center Riley's character */
+.character__Riley {
+  grid-column: span 2;
+}
+
+
+/* Emotions Section */
+.emotions-section {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  grid-template-areas: 
+    "emotions-info emotions-thumbnails";
+}
+
+.emotions-info {
+  grid-area: emotions-info;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3em;
+  background-color: #c9c5ea; 
+  padding-top: 100px; 
+}
+
+.emotions-info h2 {
+  font-size: 2em;
+  color: #201d80;
+}
+
+.emotions-grid {
+  grid-area: emotions-thumbnails;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 80px;
+  justify-items: center;
+  grid-template-rows: auto; 
+}
+
+.emotion {
+  position: relative;
+  text-align: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.emotion img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.emotion.anger img {
+ width: 100%;
+ height: 60%;
+
+}
+.emotion:hover img {
+  transform: scale(1.1); 
+  filter: drop-shadow(0 0 10px var(--emotion-glow-color)); 
+}
+
+.emotion .name {
+  font-size: 1.6em;
+  color: #201d80;
+  text-shadow: 5px 5px 30px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+
+
+.emotion .description {
+  display: none;
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  background-color: rgba(201, 197, 234, 0.8);
+  color: black;
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+  z-index: 0;
+}
+
+.emotion:hover .description {
+  display: block;
+}
+
+.embarrassment {
+  grid-column: span 3;
+}
+
+/* Glow color depending on emotion  */
+.joy {
+  --emotion-glow-color: #fedf68; 
+}
+.sadness {
+  --emotion-glow-color: #4b6e91; 
+}
+.fear {
+  --emotion-glow-color: #4b8f8f;
+}
+.anger {
+  --emotion-glow-color: #ec252c;
+}
+.disgust {
+  --emotion-glow-color: #66bb6a; 
+}
+.anxiety {
+  --emotion-glow-color: #ff9933; 
+}
+.embarrassment {
+  --emotion-glow-color: #ff99cc; 
+}
+
+@media (max-width: 768px) {
+  .family-section {
+    grid-template-columns: 1fr; 
+    grid-template-areas: 
+      "family-info"
+      "family-thumbnails";
   }
-  
-  .MTC-main {
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 40px;
-    padding: 20px;
+
+  .family-info {
+    padding-top: 100px
+    font-size: 2em; 
   }
-  
+
   .family-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Left column for text, right column for thumbnails */
-    grid-gap: 40px;
-    margin-bottom: 40px; /* Space between sections */
+    grid-template-columns: 1fr; 
+    gap: 20px;
   }
 
-  .character__riley {
-    grid-column: 1 / span 2;
+  .character {
+    height: 300px;
   }
 
-  .MTC-section__title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .MTC-section__description {
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  
-  .MTC-emotions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns for the mom and dad */
-    gap: 20px; /* Space between grid items */
-    justify-items: center; 
-  }
-  
-  .MTC-family_img {
-    width: 100px;
-    height: auto;
-  }
-  .MTC-grid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
+  .emotions-section {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "emotions-info"
+      "emotions-thumbnails";
   }
 
-  
-  .MTC-thumbnail {
-    width: 200px; /* Thumbnail width */
-    height: 200px; /* Thumbnail height */
-    border-radius: 50%; /* Circular thumbnails */
-    overflow: hidden; /* Hide overflow for circular effect */
-    background-color: #f0f0f0; /* Thumbnail background color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Center content vertically */
-  }
-  
-  .MTC-emotion__img {
-    width: 200px; /* Image fills the container */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  .MTC-thumbnail__name {
-    margin-top: 10px; /* Space between image and text */
-    text-align: center; /* Center the text */
+  .emotion {
+    height: 300px; 
   }
 
-  .MTC-thumbnail__text {
-    text-align: center;
+  .emotions-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .MTC-section--family {
-    margin-bottom: 40px; /* Ensure there's space below the Family section */
+  .emotion-info {
+    padding-top: 80px;
+    font-size: 2em; 
+  }
+
+  .emotion .name {
+    font-size: 1em;
+  }
 }
 
-.MTC-section--emotions {
-    margin-top: 40px; /* Add some space above the Emotions section */
+
+@media (max-width: 600px) {
+  /* Family Section */
+  .family-info {
+    font-size: 1.8em; 
+  }
+
+  .family-grid {
+    gap: 15px; 
+  }
+
+  .character {
+    height: 250px;
+  }
+
+  /* Emotions Section */
+  .emotions-info {
+    font-size: 1.8em; 
+  }
+
+  .emotions-grid {
+    gap: 15px;
+  }
+
+  .emotion {
+    height: 250px; 
+  }
+
+  .emotion .name {
+    font-size: 1.4em; 
+    bottom: 5px;
+  }
 }
+
+
 /* SIERRA - HOMEPAGE-SPECIFIC STYLES */
 
 /* Hero Section */
