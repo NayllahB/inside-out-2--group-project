@@ -109,6 +109,7 @@ h6 {
   color: #333; /* Adjust color if necessary */
 }
 
+/* Header - Sierra*/
 .allheader { /*styling for header*/
   background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7, #85389f);
   padding: 30px;
@@ -156,11 +157,84 @@ h6 {
   font-size: 40px;
 }
 
-.allfooter { /*styling for footer*/
-  background-color: var(--primary-grey);
-  text-align: center;
-  padding: 5px;
-  line-height: 20px;
+/* Footer Styling with Gradient */
+.allfooter {
+  background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7, #85389f);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* "Inside Out 2" Text Styling on the Left */
+.footer-logo {
+  flex: 1;
+}
+
+.footer-logo-link {
+  font-family: 'InsideOutCustomFont', sans-serif; /* Use custom font */
+  font-size: 40px; /* Adjust size as needed */
+  color: #ffffff;
+  text-decoration: none; /* Remove underline */
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.footer-logo-link:hover {
+  color: #f6f6f4; /* Optional: Change color slightly on hover */
+}
+
+/* Credits Section on the Right */
+.footer-credits {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-credits strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* Names arranged in two rows */
+.footer-names {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Two columns */
+  gap: 8px 20px; /* Adjust for spacing between names */
+  justify-content: right; /* Align names to the right */
+}
+
+.footer-names div {
+  font-size: 16px;
+}
+
+/* Responsive Footer Styling for Smaller Screens */
+@media (max-width: 768px) {
+  .allfooter {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .footer-logo-link {
+      font-size: 28px; /* Increase size if desired */
+      margin-bottom: 15px;
+  }
+
+  .footer-credits {
+      text-align: center;
+  }
+
+  /* Names in two columns, centered */
+  .footer-names {
+      display: grid;
+      grid-template-columns: repeat(2, auto); /* Keep two columns */
+      gap: 5px 20px;
+      justify-content: center; /* Center-align the grid */
+  }
 }
 
 /* MELS WEBPAGE STYLE. */
@@ -473,7 +547,7 @@ h6 {
   position: relative;
   width: 100%;
   height: 60vh;
-  background-image: url('Background.png');
+  background-image: url('Photo\ folder/Background.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -544,7 +618,8 @@ h6 {
 .hero__button {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  padding: 10px 30px;
+  font-size: 20px; /* Increase font size */
+  padding: 15px 40px;
   border: 2px solid #ffffff; /* White outline */
   background: transparent; /* Transparent background */
   color: #ffffff; /* White text */
@@ -603,44 +678,120 @@ h6 {
   color: var(--primary-black);
 }
 
-/* CTA Sections */
-.cta-section {
-  padding: 40px 20px;
-  text-align: center;
-  margin: 20px;
-  border-radius: 15px;
-  background-color: var(--primary-grey);
+/* Inside Out 1 Overview Section */
+.inside-out-1-overview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
-.cta-section h2 {
+/* Image Container */
+.overview-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image Hover Effect using drop-shadow */
+.overview-image {
+  max-width: 450px;
+  border-radius: 20px; /* Only applies to the image if it has a rectangular edge */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.overview-image:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3)); /* Shadow follows the shape of the PNG */
+}
+
+/* Content Container */
+.overview-content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+  text-align: left;
+}
+
+.overview-content-container h2 {
   font-family: 'Poppins', sans-serif;
-  color: var(--primary-mdn-blue);
-  font-size: 32px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  color: #201d80;
+  margin-bottom: 15px;
 }
 
-.cta-section p {
+.overview-content-container p {
   font-family: 'Lora', serif;
-  font-size: 18px;
-  color: var(--primary-black);
-  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.5;
 }
 
-.cta-section button {
+/* Button Styling */
+.overview-content-container button {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  padding: 10px 20px;
-  border: none;
-  background: var(--primary-thistle);
-  color: var(--primary-white);
-  border-radius: 100px;
+  padding: 15px 40px;
+  color: #201d80;
+  background: transparent;
+  border: 2px solid #201d80; /* Primary color outline */
+  border-radius: 30px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 18px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, transform 0.4s ease;
 }
 
-.cta-section button:hover {
-  background: var(--primary-mdn-blue);
+.overview-content-container button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7); /* Gradient background */
+  z-index: -1; /* Keeps gradient behind the text */
+  transform: scaleX(0); /* Start with no fill */
+  transform-origin: left;
+  transition: transform 0.4s ease; /* Smooth fill animation */
 }
+
+.overview-content-container button:hover::before {
+  transform: scaleX(1); /* Fills the button on hover */
+}
+
+.overview-content-container button:hover {
+  color: #ffffff; /* Keep text white on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+  transform: scale(1.05); /* Grows the button slightly on hover */
+}
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .inside-out-1-overview {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .overview-image {
+      max-width: 250px;
+  }
+
+  .overview-content-container {
+      max-width: 90%;
+      text-align: center;
+  }
+}
+
 
 /* Meet the Characters Section */
 .meet-characters-section {
@@ -746,6 +897,256 @@ h6 {
     height: 200px;
   }
 }
+
+/* Achievements Section Styling */
+.achievements-section {
+  background-color: var(--primary-grey);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.achievements-section h2 {
+  font-size: 32px;
+  color: var(--primary-mdn-blue);
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.achievements-section p {
+  font-size: 18px;
+  color: var(--primary-black);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Featured Achievements Grid */
+.featured-achievements {
+  display: flex;
+  gap: 40px; /* Increased gap between each achievement */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* Individual achievement box styling */
+.achievement {
+  background-color: var(--primary-white);
+  padding: 20px;
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 220px; /* Adjust width as needed */
+  text-align: center;
+  margin: 20px; /* Adds space between achievement boxes */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.achievement:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 4px 80px rgba(255, 215, 0, 0.5); /* Soft golden glow */
+}
+
+/* Icon styling */
+.achievement-icon {
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Achievement title styling */
+.achievement h3 {
+  font-size: 18px;
+  color: var(--primary-mdn-blue);
+  margin-top: 10px;
+}
+
+/* Paragraph text styling */
+.achievement p {
+  font-size: 16px;
+  color: var(--primary-black);
+  line-height: 1.5;
+}
+
+/* Achievements Button Styling */
+.achievements-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 12px 30px;
+  color: var(--primary-mdn-blue);
+  background: transparent;
+  border: 2px solid var(--primary-mdn-blue); /* Consistent border color */
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.achievements-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7); /* Gradient background */
+  z-index: -1;
+  transform: scaleX(0); /* Start with no fill */
+  transform-origin: left;
+  transition: transform 0.4s ease; /* Smooth fill animation */
+}
+
+.achievements-button:hover::before {
+  transform: scaleX(1); /* Fills the button on hover */
+}
+
+.achievements-button:hover {
+  color: #ffffff; /* White text on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+  transform: scale(1.05); /* Slightly grow button on hover */
+}
+
+/* Reviews Section */
+.reviews-section {
+  background-color: #ffffff; /* White background */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* Section Heading */
+.reviews-section h2 {
+  font-size: 32px;
+  color: var(--primary-mdn-blue);
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Reviews Content Layout */
+.reviews-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Review Image Container Styling */
+.review-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px; /* Matches the max size of the group image */
+  margin-right: 20px; /* Adjusts the space between the image and reviews */
+}
+
+.review-image-effect {
+  width: 120%; /* Make it fill the container */
+  height: auto; /* Keep aspect ratio */
+  border-radius: 20px; /* Rounded corners */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.review-image-effect:hover {
+  transform: scale(1.05); /* Grow effect on hover */
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3)); /* Shadow effect */
+}
+
+/* Review Cards Container */
+.review-cards {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual Review Card Styling */
+.review-card {
+  background-color: #f6f6f4; /* Light grey background */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+  max-width: 600px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Review Header (with Icons and Title) */
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.review-header h3 {
+  font-size: 18px;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Review Icon Styling */
+.review-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Review Text */
+.review-card p {
+  font-size: 16px;
+  font-family: 'Lora', serif;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Button to See All Reviews */
+.see-all-reviews-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 12px 30px;
+  color: #201d80; /* Primary blue */
+  background: transparent;
+  border: 2px solid #201d80; /* Primary color outline */
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.see-all-reviews-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7); /* Gradient background */
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.see-all-reviews-button:hover::before {
+  transform: scaleX(1); /* Fill effect on hover */
+}
+
+.see-all-reviews-button:hover {
+  color: #ffffff; /* White text on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+  transform: scale(1.05);
+}
+
+
 
 /*Nayllah's Styling */
 .a_hero {
@@ -918,6 +1319,39 @@ h6 {
   .review_card {
     text-align: center;
   }
+
+  /* Default styling for hero logo */
+.hero__logo {
+  width: 400px; /* Original size */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .hero__logo {
+      width: 250px; /* Adjusted size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__logo {
+      width: 300px; /* Even smaller size for very small screens */
+  }
+
+  .hero__buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between stacked buttons */
+    align-items: center; /* Center align for mobile */
+}
+
+.hero__button {
+    font-size: 16px; /* Smaller font size for mobile to keep text on one line */
+    padding: 15px 40px; /* Smaller padding for mobile */
+    width: 100%; /* Adjust width for mobile */
+    white-space: nowrap; /* Prevents text wrapping to keep it on one line */
+}
+  
 }
 
 /* JC PAGE STYLE */
