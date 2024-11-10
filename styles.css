@@ -408,87 +408,63 @@ h6 {
 }
 
 @media (max-width: 768px) {
-  .family-section {
-    grid-template-columns: 1fr; 
-    grid-template-areas: 
-      "family-info"
-      "family-thumbnails";
+  .family-section, .emotions-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .family-info {
+
+  .family-info, .emotions-info{
+    width: 100%;
+    text-align: center;
     padding-top: 100px;
+    padding-bottom: 50px;
     font-size: 2em; 
+  }
+
+  .family-grid, .emotions-grid {
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    align-items: center;
   }
 
   .family-grid {
-    grid-template-columns: 1fr; 
-    gap: 20px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    gap: 400px;
   }
 
-  .character {
-    height: 300px;
+.emotion {
+   height: auto;
+   width: 80%;
+   max-width: 200px;
   }
-
-  .emotions-section {
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-      "emotions-info"
-      "emotions-thumbnails";
-  }
-
-  .emotion {
-    height: 300px; 
-  }
-
-  .emotions-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .emotion-info {
-    padding-top: 80px;
-    font-size: 2em; 
-  }
-
-  .emotion .name {
-    font-size: 1em;
+.character {
+  height: 80%;
+  width: auto;
+}
+  .character img, .emotion img {
+    width: 100%;
+    height: auto;  
+    object-fit: cover;
   }
 }
+  
 
 
 @media (max-width: 600px) {
-  /* Family Section */
-  .family-info {
+  .MTC-hero h1 {
+    font-size: 3em;
+  }
+  
+  .family-info, .emotions-info {
     font-size: 1.8em; 
-  }
-
-  .family-grid {
-    gap: 15px; 
-  }
-
-  .character {
-    height: 250px;
-  }
-
-  /* Emotions Section */
-  .emotions-info {
-    font-size: 1.8em; 
-  }
-
-  .emotions-grid {
-    gap: 15px;
-  }
-
-  .emotion {
-    height: 250px; 
-  }
-
-  .emotion .name {
-    font-size: 1.4em; 
-    bottom: 5px;
   }
 }
-
 
 /* SIERRA - HOMEPAGE-SPECIFIC STYLES */
 
