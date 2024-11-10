@@ -1,6 +1,6 @@
 :root { /* These are the colors provided from the style guide, please use these while building your webpage*/
   --primary-white:#ffffff;
-  --primary-grey:#d9d9d9;
+  --primary-grey:#f6f6f4;
   --primary-black:#000000;
   --primary-mdn-blue:#201d80;
   --primary-thistle:#c9c5ea;
@@ -14,124 +14,1028 @@
   --embarassment:#e773ac;
   --ennui:#7079b8;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .allheader { /*styling for header*/
-    background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7, #85389f);
-    padding: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .allnav_link { /*styling for links in header*/
-    color: var(--primary-white);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 5px;
-    margin: 0 5px;
-    text-transform: uppercase;
-    
-  }
-  .movie_name { /*styling for movie name*/
-    color:var(--primary-thistle);
-    margin: 0 auto 0 0;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 40px;
-  }
-
-  .allfooter { /*styling for footer*/
-    background-color: var(--primary-grey);
-    text-align: center;
-    padding: 5px;
-  }
-
-/* MELS WEBPAGE STYLE. Everything with .MTC in front of it only modifies the "meet the characters" page. */
-
-  .MTC-header {
-    background-color: #4a90e2; /* Header background color */
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .MTC-main {
-    display: grid;
-    grid-template-rows: auto auto;
-    gap: 40px;
-    padding: 20px;
-  }
-  
-  .MTC-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Left column for text, right column for thumbnails */
-    grid-gap: 40px;
-    margin-bottom: 40px; /* Space between sections */
-  }
-  
-  .MTC-section__title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .MTC-section__description {
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-  
-  .MTC-grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns for the mom and dad */
-    gap: 20px; /* Space between grid items */
-    justify-items: center; 
-  }
-  
-  .MTC-grid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-  }
-
-  .MTC-grid-item--riley {
-    grid-column: 1 / span 2;
-  }
-  
-  .MTC-thumbnail {
-    width: 200px; /* Thumbnail width */
-    height: 200px; /* Thumbnail height */
-    border-radius: 50%; /* Circular thumbnails */
-    overflow: hidden; /* Hide overflow for circular effect */
-    background-color: #f0f0f0; /* Thumbnail background color */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Center content vertically */
-  }
-  
-  .MTC-thumbnail__img {
-    width: 100%; /* Image fills the container */
-    height: auto; /* Maintain aspect ratio */
-  }
-  
-  .MTC-thumbnail__name {
-    margin-top: 10px; /* Space between image and text */
-    text-align: center; /* Center the text */
-  }
-
-  .MTC-thumbnail__text {
-    text-align: center;
-  }
-
-  .MTC-section--family {
-    margin-bottom: 40px; /* Ensure there's space below the Family section */
+/* Reset default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.MTC-section--emotions {
-    margin-top: 40px; /* Add some space above the Emotions section */
+@font-face {
+  font-family: 'InsideOutCustomFont';
+  src: url('fonts/InsideOut-DAp0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.movie_name {
+    font-family: 'InsideOutCustomFont', sans-serif;
+    font-size: 40px; /* Adjust size as needed */
+    color: var(--primary-white); /* Set color to white */
+    letter-spacing: 2px; /* Adjust letter spacing */
+    text-decoration: none; /* Remove underline from link */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for growth and shadow */
+}
+
+.movie_name:hover {
+    transform: scale(1.1); /* Grow effect on hover */
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3)); /* Shadow effect */
+}
+
+/* Set the main font and background color */
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+/* Set Poppins as the primary font for the entire website */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Apply Lora as the secondary font for quotes and special text */
+.quote, .secondary-text {
+  font-family: 'Lora', serif;
+}
+
+/* Heading level styles with Poppins font weights and sizes */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 700; /* Bold */
+  margin: 0; /* Optional: Reset margin if needed */
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 600; /* Semi-Bold */
+  margin: 0;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 500; /* Medium */
+  margin: 0;
+}
+
+h4 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 400; /* Regular */
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 300; /* Light */
+  margin: 0;
+}
+
+h6 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 300; /* Light */
+  margin: 0;
+}
+
+/* Example for applying Lora font to quotes */
+.quote {
+  font-family: 'Lora', serif;
+  font-style: italic; /* Optional: adds italics for a quote look */
+  font-size: 18px; /* Adjust as needed */
+  color: #333; /* Adjust color if necessary */
+}
+
+.allheader { /*styling for header*/
+  background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7, #85389f);
+  padding: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.allnav_link {
+  color: var(--primary-white);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px;
+  margin: 0 5px;
+  text-transform: uppercase;
+  position: relative;
+}
+  
+.allnav_link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Position underline slightly below the text */
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-white);
+  transition: width 0.3s ease;
+}
+  
+/* Hover effect to animate underline */
+.allnav_link:hover::after {
+  width: 100%;
+}
+  
+/* Keep underline on the active page */
+.allnav_link.active::after {
+  width: 100%;
+}
+  
+.movie_name { /*styling for movie name*/
+  color:var(--primary-white);
+  margin: 0 auto 0 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.allfooter { /*styling for footer*/
+  background-color: var(--primary-grey);
+  text-align: center;
+  padding: 5px;
+  line-height: 20px;
+}
+
+/* MELS WEBPAGE STYLE. */
+
+.MTC-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 500px; 
+  overflow: hidden;
+}
+
+.MTC-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
+}
+
+.MTC-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.MTC-hero h1 {
+  font-size: 5em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 2; 
+}
+
+/* Family Section */
+.family-section {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  grid-template-areas: 
+    "family-info family-thumbnails";
+}
+
+.family-info {
+  grid-area: family-info;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3em;
+  background-color: #c9c5ea;
+  padding-top: 300px;
+}
+
+.family-info h2 {
+  font-size: 2em;
+  color: #201d80;
+}
+
+.family-grid {
+  grid-area: family-thumbnails;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  justify-items: center;
+}
+
+.character {
+  position: relative;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.character .name {
+  position: center;
+  bottom: 20px;
+  font-size: 3em;
+  color: #201d80;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+
+}
+
+.character .description {
+  display: none;
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  right: 0;
+  background-color: rgba(201, 197, 234, 0.8);
+  color: black;
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.character:hover .description {
+  display: block;
+}
+
+.character:hover img {
+  transform: scale(1.1); 
+}
+
+/* Center Riley's character */
+.character__Riley {
+  grid-column: span 2;
+}
+
+
+/* Emotions Section */
+.emotions-section {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  grid-template-areas: 
+    "emotions-info emotions-thumbnails";
+}
+
+.emotions-info {
+  grid-area: emotions-info;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3em;
+  background-color: #c9c5ea; 
+  padding-top: 100px; 
+}
+
+.emotions-info h2 {
+  font-size: 2em;
+  color: #201d80;
+}
+
+.emotions-grid {
+  grid-area: emotions-thumbnails;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 80px;
+  justify-items: center;
+  grid-template-rows: auto; 
+}
+
+.emotion {
+  position: relative;
+  text-align: center;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.emotion img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.emotion.anger img {
+ width: 100%;
+ height: 60%;
+
+}
+.emotion:hover img {
+  transform: scale(1.1); 
+  filter: drop-shadow(0 0 10px var(--emotion-glow-color)); 
+}
+
+.emotion .name {
+  font-size: 1.6em;
+  color: #201d80;
+  text-shadow: 5px 5px 30px rgba(0, 0, 0, 1);
+  z-index: 1;
+}
+
+
+.emotion .description {
+  display: none;
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  background-color: rgba(201, 197, 234, 0.8);
+  color: black;
+  padding: 10px;
+  font-size: 1em;
+  text-align: center;
+  z-index: 0;
+}
+
+.emotion:hover .description {
+  display: block;
+}
+
+.embarrassment {
+  grid-column: span 3;
+}
+
+/* Glow color depending on emotion  */
+.joy {
+  --emotion-glow-color: #fedf68; 
+}
+.sadness {
+  --emotion-glow-color: #4b6e91; 
+}
+.fear {
+  --emotion-glow-color: #4b8f8f;
+}
+.anger {
+  --emotion-glow-color: #ec252c;
+}
+.disgust {
+  --emotion-glow-color: #66bb6a; 
+}
+.anxiety {
+  --emotion-glow-color: #ff9933; 
+}
+.embarrassment {
+  --emotion-glow-color: #ff99cc; 
+}
+
+@media (max-width: 768px) {
+  .family-section {
+    grid-template-columns: 1fr; 
+    grid-template-areas: 
+      "family-info"
+      "family-thumbnails";
+  }
+
+  .family-info {
+    padding-top: 100px;
+    font-size: 2em; 
+  }
+
+  .family-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .character {
+    height: 300px;
+  }
+
+  .emotions-section {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "emotions-info"
+      "emotions-thumbnails";
+  }
+
+  .emotion {
+    height: 300px; 
+  }
+
+  .emotions-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .emotion-info {
+    padding-top: 80px;
+    font-size: 2em; 
+  }
+
+  .emotion .name {
+    font-size: 1em;
+  }
+}
+
+
+@media (max-width: 600px) {
+  /* Family Section */
+  .family-info {
+    font-size: 1.8em; 
+  }
+
+  .family-grid {
+    gap: 15px; 
+  }
+
+  .character {
+    height: 250px;
+  }
+
+  /* Emotions Section */
+  .emotions-info {
+    font-size: 1.8em; 
+  }
+
+  .emotions-grid {
+    gap: 15px;
+  }
+
+  .emotion {
+    height: 250px; 
+  }
+
+  .emotion .name {
+    font-size: 1.4em; 
+    bottom: 5px;
+  }
+}
+
+
+/* SIERRA - HOMEPAGE-SPECIFIC STYLES */
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url('Background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bokeh-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Styling individual bokeh circles for a soft overlay effect */
+.bokeh-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2; /* Transparent to create a blended effect */
+  pointer-events: none;
+  transition: transform 0.1s ease-out;
+}
+
+/* Define color variations to mimic the reference bokeh */
+.bokeh-circle.blue {
+  background: rgba(102, 153, 255, 0.3); /* Soft blue */
+}
+
+.bokeh-circle.purple {
+  background: rgba(170, 102, 204, 0.3); /* Soft purple */
+}
+
+.bokeh-circle.pink {
+  background: rgba(255, 102, 204, 0.3); /* Soft pink */
+}
+
+.hero__logo-container {
+  position: relative;
+  margin-bottom: 20px; /* Space between logo and buttons */
+  z-index: 1; /* Bring logo above background */
+}
+
+.hero__logo {
+  width: 400px; /* Adjust as needed */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for growth and shadow */
+}
+
+.hero__logo:hover {
+  transform: scale(1.1); /* Increase size on hover */
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3)); /* Drop shadow that follows the SVG shape */
+}
+
+/* Button Styles */
+.hero__buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  z-index: 1; /* Ensure buttons appear above background */
+  position: relative;
+}
+
+.hero__button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 30px;
+  border: 2px solid #ffffff; /* White outline */
+  background: transparent; /* Transparent background */
+  color: #ffffff; /* White text */
+  border-radius: 50px; /* Pill shape */
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease, transform 0.4s ease; /* Smooth transition for color and grow effect */
+}
+
+.hero__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7);
+  z-index: -1; /* Keeps gradient behind the text */
+  transform: scaleX(0); /* Start with no fill */
+  transform-origin: left;
+  transition: transform 0.4s ease; /* Smooth fill animation */
+}
+
+.hero__button:hover::before {
+  transform: scaleX(1); /* Fills the button on hover */
+}
+
+.hero__button:hover {
+  color: #ffffff; /* Keep text white on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+  transform: scale(1.05); /* Grows the button slightly on hover */
+}
+
+/* Synopsis Section Styling */
+.synopsis-section {
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  color: var(--primary-black);
+}
+
+.synopsis-section h2 {
+  font-size: 32px;
+  color: var(--primary-mdn-blue);
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.synopsis-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Lora', serif;
+  color: var(--primary-black);
+}
+
+/* CTA Sections */
+.cta-section {
+  padding: 40px 20px;
+  text-align: center;
+  margin: 20px;
+  border-radius: 15px;
+  background-color: var(--primary-grey);
+}
+
+.cta-section h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-mdn-blue);
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.cta-section p {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: var(--primary-black);
+  margin-bottom: 20px;
+}
+
+.cta-section button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  background: var(--primary-thistle);
+  color: var(--primary-white);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cta-section button:hover {
+  background: var(--primary-mdn-blue);
+}
+
+/* Meet the Characters Section */
+.meet-characters-section {
+  background-color: var(--primary-grey); /* Grey background */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.meet-characters-section h2 {
+  font-size: 32px;
+  color: var(--primary-mdn-blue);
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Character Grid Layout */
+.character-grid {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px; /* Adjust gap between images */
+  margin-bottom: 30px;
+  max-width: 800px; /* Limit the width of the grid on large screens */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.character {
+  position: relative;
+  width: 200px; /* Adjust size as needed */
+  height: auto; /* Allow height to adjust based on image */
+  overflow: visible; /* Let image exceed the container if needed */
+  transition: transform 0.3s ease;
+}
+
+/* Character Image */
+.character-image {
+  width: 100%; /* Adjust size as needed */
+  height: auto;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover Effect for the Character Image */
+.character:hover .character-image {
+  transform: scale(1.1); /* Slightly increase image size on hover */
+  filter: 
+    drop-shadow(0px 0px 20px var(--glow-color)); /* Glow for emphasis */
+}
+
+/* Meet Button Styling */
+.meet-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 10px 30px;
+  color: prim; /* White text */
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 2px solid var(--primary-mdn-blue); /* Primary blue color for the border */
+  border-radius: 50px; /* Pill shape */
+  transition: color 0.4s ease, transform 0.4s ease;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0px 0px 0px 2px #fff inset; /* Creates a white gap between gradient and text */
+}
+
+.meet-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #190753, #322c90, #5505aa, #2717b1, #3d68e7);
+  z-index: -1; /* Keeps gradient behind the text */
+  border-radius: 50px;
+  transition: transform 0.4s ease; /* Smooth fill animation */
+  transform: scaleX(0); /* Start with no fill */
+  transform-origin: left;
+}
+
+.meet-button:hover::before {
+  transform: scaleX(1); /* Expands to fill the button on hover */
+}
+
+.meet-button:hover {
+  color: #ffffff; /* Keep text white on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+  transform: scale(1.05); /* Grows the button slightly on hover */
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .character-grid {
+    gap: 2px; /* Reduced gap to bring images closer */
+    justify-content: center; /* Center the grid */
+  }
+
+  .character {
+    width: 200px; /* Increased size for larger images */
+    height: 200px;
+  }
+}
+
+/*Nayllah's Styling */
+.a_hero {
+  /* display: flex; */
+  position: relative;
+  height: 50vh; 
+  overflow: hidden;
+}
+
+.a_hero_img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
+}
+
+.a_intro_title {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--primary-mdn-blue);
+}
+
+.a_intro_p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--primary-black);
+  padding: 30px;
+}
+.a_intro {
+  animation: card 1s linear;
+}
+@keyframes card {
+  50% {transform: translateY(10px);}
+  75% {transform: translateY(0px);}
+}
+.awards_title, .reviews_title {
+  text-align: center;
+  color: var(--primary-mdn-blue);
+  font-size: 32px;
+  font-weight: 600; /* Semi-Bold */
+}
+
+.a_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--primary-grey);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.a_card {
+  width: 300px;
+  text-align: center;
+  background-color: var(--primary-white);
+  padding: 10px;
+  border-radius: 15px;
+  line-height: 25px;
+  box-shadow: gray 4px 4px 10px 2px;
+  transition: transform 0.3s ease;
+}
+.a_card:hover {
+  transform: scale(1.1);
+}
+.a_card_img {
+  border-radius: 8px;
+  height: 250px;
+  width: 250px;
+}
+.a_card_award {
+  font-weight: bold;
+}
+.review_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+.review_card {
+  background-color: var(--primary-grey);
+  border-radius: 15px;
+  max-width: 1300px;
+  padding: 10px;
+  /* box-shadow: gray 4px 4px 10px 2px; */
+}
+.review_content {
+  display: flex;
+  flex-direction: column;
+}
+.review_img_rt {
+  width: 50px;
+  margin: 5px 15px 0 10px;
+}
+.review_img_google {
+  width: 100px;
+  margin-top: 5px;
+}
+.review_img_move {
+  float: left;
+}
+.review_p_title {
+  padding: 5px;
+  font-weight: bold;
+}
+.review_p {
+  /* word-wrap: break-word; */
+  line-height: 28px;
+}
+
+
+/* Display characters in two columns on smaller screens */
+@media (max-width: 600px) {
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two characters per row */
+    display: grid; /* Use grid layout for easier control */
+    justify-items: center; /* Center each item in its grid cell */
+    gap: 10px; /* Adjust as needed for spacing */
+  }
+
+  .character {
+    width: 140px; /* Further increased size for larger images on small screens */
+    height: 140px;
+  }
+}
+
+/* Responsive Header Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .allheader {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally within the header */
+    justify-content: center; /* Center items vertically within the header */
+    padding: 20px 0; /* Add padding for a normal-sized header */
+    text-align: center; /* Center-aligns text content */
+  }
+
+  .movie_name {
+    font-size: 36px; /* Adjust size for smaller screens */
+    margin-bottom: 10px; /* Add space below the logo */
+    text-align: center;
+    order: -1; /* Ensures the logo is above the nav links */
+    width: 100%; /* Make it take full width for centering */
+    display: flex;
+    justify-content: center; /* Center the logo text horizontally */
+  }
+
+  .allheader__nav {
+    display: flex;
+    flex-wrap: wrap; /* Allows links to wrap to a new line if needed */
+    justify-content: center; /* Center-align nav links */
+    gap: 10px; /* Space between nav links */
+    max-width: 100%; /* Keep nav links within screen width */
+    padding: 0;
+  }
+
+  .allnav_link {
+    font-size: 16px; /* Adjust size to prevent overcrowding */
+    padding: 5px 10px; /* Adjust padding as needed */
+  }
+
+  .review_img_move {
+    float: none;
+  }
+  .review_card {
+    text-align: center;
+  }
+}
+
+/* JC PAGE STYLE */
+
+.insideout1_hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 500px; 
+}
+
+.insideout1_hero_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;  
+}
+
+.insideout1_title_plot {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--joy);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.insideout1_title_res {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--anger);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.insideout1_title_theme {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--sadness);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.insideout1_title_plot:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(76, 190, 255, 1));
+}
+
+.insideout1_title_res:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(254, 223, 104, 1));
+}
+
+.insideout1_title_theme:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(236, 37, 44, 1));
+}
+
+.insideout1_content {
+  font-size: large;
+  padding: 5px 5px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 15px auto;
+  max-width: 800px;
+  color: var(--primary-grey);
+  background-color: var(--primary-mdn-blue);
+}
+
+.insideout1_title {
+  padding: 10px 10px;
+  text-align: center;
+  margin: 10px auto;
+  max-width: 800px;
+  color: var(--primary-mdn-blue);
+}
+
+.inside_out1_characters {
+  position: relative;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.inside_out1_characters:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(32, 29, 128, 1));
+}
+
+.insideout1_character_grid {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
