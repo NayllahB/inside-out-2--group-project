@@ -23,7 +23,7 @@
     <section class="hero">
         <div class="bokeh-layer"></div>
         <div class="hero__logo-container">
-            <img src="Logo.svg" alt="Inside Out 2 Logo" class="hero__logo">
+            <img src="Photo folder/Logo.svg" alt="Inside Out 2 Logo" class="hero__logo">
         </div>
         <div class="hero__buttons">
             <button onclick="location.href='insideout1.html'" class="hero__button">Inside Out 1</button>
@@ -41,38 +41,113 @@
     <h2>Meet the Characters</h2>
     <div class="character-grid">
         <div class="character" style="--glow-color: #fedf68;">
-            <img src="joy.png" alt="Joy" class="character-image">
+            <img src="Photo folder/Joy.png" alt="Joy" class="character-image">
         </div>
         <div class="character" style="--glow-color: #e4773a;">
-            <img src="anxiety.png" alt="Anxiety" class="character-image">
+            <img src="Photo folder/Anxiety.png" alt="Anxiety" class="character-image">
         </div>
         <div class="character" style="--glow-color: #4cbeff;">
-            <img src="sadness.png" alt="Sadness" class="character-image">
+            <img src="Photo folder/Sadness.png" alt="Sadness" class="character-image">
         </div>
         <div class="character" style="--glow-color: #badb70;">
-            <img src="disgust.png" alt="Disgust" class="character-image">
+            <img src="Photo folder/Disgust.png" alt="Disgust" class="character-image">
         </div>
     </div>
     <button class="meet-button" onclick="location.href='MTC.html'">Meet them all!</button>
 </section>
-        <!-- Overview Section -->
-        <section class="cta-section">
-            <h2>Inside Out Overview</h2>
-            <p>Read about the plot and key themes of the first Inside Out movie. Understand the journey that led Riley and her emotions to where they are now.</p>
-            <button onclick="location.href='overview.html'">View the Overview</button>
-        </section>
+        <!-- Inside Out 1 Overview Section -->
+        <section class="inside-out-1-overview">
+            <div class="overview-image-container">
+                <img src="Photo folder/inside_out_1_group.png" alt="Inside Out 1 Group" class="overview-image">
+            </div>
+            <div class="overview-content-container">
+                <h2>Discover the Original Journey</h2>
+                <p>Relive the unforgettable adventure with Riley and her emotions in the first Inside Out movie. See how Joy, Sadness, and the rest of the team helped her navigate childhood and face life’s biggest challenges.</p>
+                <button onclick="location.href='insideout1.html'">Learn More</button>
+            </div>
+        </section>        
 
-        <!-- Achievements Section -->
-        <section class="cta-section">
-            <h2>Achievements and Reviews</h2>
-            <p>See the awards and critical acclaim Inside Out has received. Discover why this franchise is beloved by fans and critics alike.</p>
-            <button onclick="location.href='achievements.html'">View Achievements</button>
-        </section>
+    <!-- Featured Achievements -->
+    <section class="achievements-section">
+        <h2>Inside Out 2 Achievements</h2>
+        <p>Inside Out 2 has been recognized worldwide for its incredible storytelling and animation. Here are a few of the prestigious awards it has earned:</p>
+        
+        <!-- Featured Achievements -->
+        <div class="featured-achievements">
+            <!-- Example Achievement 1 -->
+            <div class="achievement">
+                <img src="Photo folder/acadamy_logo.png" alt="Award Icon 1" class="achievement-icon">
+                <h3>Best Animated Feature</h3>
+            </div>
+            
+            <!-- Example Achievement 2 -->
+            <div class="achievement">
+                <img src="Photo folder/goldenglobes.png" alt="Award Icon 2" class="achievement-icon">
+                <h3>Golden Globe for Best Animated Feature</h3>
+            </div>
+            
+            <!-- Example Achievement 3 -->
+            <div class="achievement">
+                <img src="Photo folder/cca_transparent.png" alt="Award Icon 3" class="achievement-icon">
+                <h3>Critics' Choice Award</h3>
+            </div>
+        </div>
+    
+        <!-- Button to See All Achievements -->
+        <button onclick="location.href='achievements.html'" class="achievements-button">See All Achievements</button>
+    </section>
+        
+<!-- Reviews Section -->
+<section class="reviews-section">
+    <h2>Reviews</h2>
+    <div class="reviews-content">
+        <!-- Sadness Image in its own container -->
+        <div class="review-image-container">
+            <img src="Photo folder/sadness_reviews.png" alt="Sadness from Inside Out" class="review-image-effect">
+        </div>
+        
+        <!-- Review Cards in a separate container -->
+        <div class="review-cards">
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="Photo folder/RT.png" alt="Rotten Tomatoes" class="review-icon">
+                    <h3>Audience Review from Rotten Tomatoes</h3>
+                </div>
+                <p>"The beauty of 'Inside Out 2' is that, different from all other Pixar sequels, it forces its creators to look inward to tell a story of character emotions that manages to resonate with every single audience member."</p>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-header">
+                    <img src="Photo folder/g_review_small.png" alt="Google" class="review-icon">
+                    <h3>Audience Review from Google</h3>
+                </div>
+                <p>"Solid 10/10 it’s a really good movie when I watched it in theaters on the day it came out, I cried and laughed and more! It made me mix all my emotions into this movie . . ."</p>
+            </div>
+        </div>
+    </div>
+    <!-- Button to See All Reviews -->
+    <button onclick="location.href='achievements.html'" class="see-all-reviews-button">See All Reviews</button>
+</section>
+
     </main>
 
     <!-- Footer -->
     <footer class="allfooter">
-        <p>Created By:<br>Sierra Bispo<br>Melanie Halem<br>Nayllah Buteau<br>Joseph Carter</p>
+        <!-- "Inside Out 2" text on the left side linking to the homepage with custom font -->
+        <div class="footer-logo">
+            <a href="index.html" class="footer-logo-link inside-out-font">Inside Out 2</a>
+        </div>
+    
+        <!-- Credits Container on the right with names aligned in two rows -->
+        <div class="footer-credits">
+            <strong>Created By:</strong>
+            <div class="footer-names">
+                <div>Sierra Bispo</div>
+                <div>Melanie Halem</div>
+                <div>Nayllah Buteau</div>
+                <div>Joseph Carter</div>
+            </div>
+        </div>
     </footer>
     <script>
         const bokehLayer = document.querySelector('.bokeh-layer');
