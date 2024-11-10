@@ -943,3 +943,99 @@ h6 {
     text-align: center;
   }
 }
+
+/* JC PAGE STYLE */
+
+.insideout1_hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 500px; 
+}
+
+.insideout1_hero_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;  
+}
+
+.insideout1_title_plot {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--joy);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.insideout1_title_res {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--anger);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.insideout1_title_theme {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--sadness);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.insideout1_title_plot:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(76, 190, 255, 1));
+}
+
+.insideout1_title_res:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(254, 223, 104, 1));
+}
+
+.insideout1_title_theme:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(236, 37, 44, 1));
+}
+
+.insideout1_content {
+  font-size: large;
+  padding: 5px 5px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 15px auto;
+  max-width: 800px;
+  color: var(--primary-grey);
+  background-color: var(--primary-mdn-blue);
+}
+
+.insideout1_title {
+  padding: 10px 10px;
+  text-align: center;
+  margin: 10px auto;
+  max-width: 800px;
+  color: var(--primary-mdn-blue);
+}
+
+.inside_out1_characters {
+  position: relative;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.inside_out1_characters:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 10px rgba(32, 29, 128, 1));
+}
+
+.insideout1_character_grid {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
